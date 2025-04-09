@@ -3,49 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> :) </title>
+    <title>Vishesh Yadav</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Root styles for genius-level minimalism */
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --subtle: rgba(0, 0, 0, 0.7);
+            --hint: rgba(0, 0, 0, 0.3);
+            --spacing: 2rem;
+            --micro-spacing: 0.5rem;
+            --font: 'Playfair Display', serif;
+            --content-width: 90vw;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            /* background-color: #f0f0f0; */
-            background-color: #ffffff;
+            font-weight: 400;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
         }
+        
+        /* Ultra-minimal layout */
+        .container {
+            max-width: var(--content-width);
+            height: 90vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: var(--spacing);
+            padding: var(--spacing);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            position: relative;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        header {
+            text-align: center;
+            position: relative;
+        }
+        
         h1 {
-            font-size: 35px;
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--micro-spacing);
+            transform: translateY(-20px);
+            animation: slideIn 0.5s ease-out forwards;
         }
-        p {
-            margin-bottom: 15px;
-            font-size: 20px;
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--subtle);
+            transform: translateY(-20px);
+            animation: slideIn 1s 0.3s ease-out forwards;
         }
-        a {
-            color: #3a6b88;
-            text-decoration: none;
+        
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+            }
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        .icon {
-            width: 32px;
-            height: 32px;
-            vertical-align: middle;
-            margin-left: 5px;
+        
+        /* Theme switch - genius level simplicity */
+        .theme-switch {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--hint);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
+            opacity: 0.4;
+        }
+        
+        .theme-switch svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text);
+        }
+        
+        .theme-switch:hover {
+            transform: rotate(20deg);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Content columns with perfect balance */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing);
+            overflow: hidden;
+        }
+        
+        .column {
+            position: relative;
+        }
+        
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            color: var(--subtle);
+            margin-bottom: var(--micro-spacing);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* Perfect spacing between work items */
+        .work-item {
+            margin-bottom: var(--micro-spacing);
+            opacity: 0;
+            animation: fadeIn 1s 0.5s ease-out forwards;
+        }
+        
+        .work-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--micro-spacing);
+        }
+        
+        p {
+            font-size: 0.95rem;
+            color: var(--subtle);
+            margin-bottom: var(--micro-spacing);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--hint);
+            transition: border-color 0.3s ease;
+        }
+        
+        a:hover {
+            border-color: var(--text);
+        }
+        
+        /* Genius-level minimalist tags */
+        .tags {
+            margin-top: var(--micro-spacing);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--micro-spacing);
+            margin-bottom: var(--spacing);
+        }
+        
+        .tag {
+            font-size: 0.85rem;
+            color: var(--subtle);
+            border: 1px solid var(--hint);
+            padding: 4px 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: var(--hint);
+        }
+        
+        /* Minimal icons that convey meaning without clutter */
+        .icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: var(--micro-spacing);
+            stroke: var(--text);
+            stroke-width: 1px;
+            fill: none;
+        }
+        
+        /* Skill bars with refined elegance */
+        .skill-bar {
+            height: 2px;
+            background: var(--hint);
+            margin-bottom: var(--micro-spacing);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-bar::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: var(--text);
+            width: 0;
+            animation: grow 0.5s ease-out forwards;
+        }
+
+        @keyframes grow {
+            to {
+                width: 100%;
+            }
+        }
+        
+        .skill-bar.ml::after { width: 95%; }
+        .skill-bar.dl::after { width: 90%; }
+        .skill-bar.nlp::after { width: 85%; }
+        .skill-bar.tf::after { width: 80%; }
+        
+        .skill-label {
+            font-size: 0.9rem;
+            color: var(--subtle);
+            margin-bottom: var(--micro-spacing);
+            margin-top: var(--spacing);
+            font-weight: 500;
+        }
+        
+        /* Ultra-minimal contact button */
+        .contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 100;
+        }
+        
+        .contact:hover {
+            transform: scale(1.1);
+        }
+        
+        .contact svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--bg);
+        }
+        
+        /* Dark theme with perfect contrast */
+        body.dark {
+            --bg: #000000;
+            --text: #ffffff;
+            --subtle: rgba(255, 255, 255, 0.7);
+            --hint: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Responsive genius */
+        @media (min-width: 769px) {
+            .container {
+                padding-left: calc(var(--spacing) * 4);
+                padding-right: calc(var(--spacing) * 4);
+                max-width: 80vw;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .work-title {
+                font-size: 1.4rem;
+            }
+            
+            .asymmetric-footer {
+                right: calc(var(--spacing) * 2);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                height: 100vh;
+                padding: var(--micro-spacing);
+                gap: var(--micro-spacing);
+                overflow: hidden;
+            }
+            
+            header {
+                margin-bottom: 0;
+            }
+            
+            .content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--micro-spacing);
+                overflow: hidden;
+            }
+            
+            .work-item {
+                margin-bottom: var(--micro-spacing);
+            }
+            
+            p {
+                margin-bottom: var(--micro-spacing);
+                font-size: 0.7rem;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .work-title {
+                font-size: 0.9rem;
+            }
+            
+            h2 {
+                font-size: 0.8rem;
+            }
+            
+            .tag {
+                font-size: 0.65rem;
+                padding: 2px 5px;
+            }
+            
+            .skill-label {
+                font-size: 0.7rem;
+            }
+            
+            header p {
+                font-size: 0.7rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .asymmetric-footer {
+                position: absolute;
+                text-align: right;
+                right: var(--micro-spacing);
+                bottom: var(--micro-spacing);
+                font-size: 0.6rem;
+            }
+        }
+        
+        .footer {
+            position: relative;
+            text-align: right;
+            padding-top: var(--micro-spacing);
+        }
+        
+        .asymmetric-footer {
+            font-size: 0.8rem;
+            color: var(--hint);
         }
     </style>
 </head>
 <body>
-    <h1>TL;DR:</h1>
-    <p><b>Vishesh Yadav</b> is a <u>Machine Learning Student</u> and mathematics scholar.</p>
-    <p>He is the author and maintainer of <a href="https://vishesh9131.github.io/corerec-doc-site/" target="_blank">  <img src="assets/cr.png" alt="icon" class="icon"> CoreRec</a> - <i>a framework to build recommendation models</i>, and <img src="assets/sl.png" alt="icon" class="icon"> <a href="https://github.com/vishesh9131/SLYRIC/blob/main/README.md" target="_blank">SLYRIC</a> - <i>Sign Language Yielding Realtime Intelligent Classifier</i>. 
-    <p>Vishesh has contributed to the <a href="https://github.com/farzadab/intraLanguageInterfaces.git" target="_blank">IntraLanguageInterfaces</a> GitHub repository owned by <a href="http://farzadab.github.io/" target="_blank">Farzad Abdolhosseini</a>  one of the Machine Learning Engineer at Apple.</p>
-    <p>Currently, he is a master's student in <i>Lovely Professional University</i> and holds a BSc in Mathematics.</p>
-    <!-- <p>He is working with his therapist to understand productivity correlations and occasionally shares insights on various platforms.</p> -->
+    <div class="container">
+        <header>
+            <h1>Vishesh Yadav</h1>
+            <div class="subtitle">Machine Learning Engineer & Mathematics Scholar</div>
+            <p>Pursuing M.C.A Hons AI | M.P.</p>
+            <p>Email: <a href="mailto:vishesh@nvidia.com">vishesh@nvidia.com</a>, <a href="mailto:sciencely98@gmail.com">sciencely98@gmail.com</a></p>
+            <p><a href="https://drive.google.com/file/d/1TyAimABwDsBt8sPPtd_8DvfoRG1t_Arm/view?usp=share_link">View CV</a></p>
+            <button class="theme-switch" aria-label="Toggle dark mode">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a10 10 0 0 0 0 20a10 10 0 0 0 0-20z"></path>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+            </button>
+        </header>
+        
+        <div class="content">
+            <div class="column">
+                <h2>Research & Contributions</h2>
+                
+                <div class="work-item">
+                    <div class="work-title">CoreRec Framework</div>
+                    <p>A custom framework similar to PyTorch/TensorFlow for recommender systems. Provides modules to build scalable recommendation systems with DNG scoring. <a href="https://corerec.tech">CoreRec</a> has over 22,000 installations.</p>
+                </div>
+                
+                <div class="work-item">
+                    <div class="work-title">Apple Collaboration</div>
+                    <p>Working with <a href="https://github.com/farzadab/intraLanguageInterfaces">Farzad Abdolhosseini</a> on Intra Language Interfaces. Successfully merged contributions to Apple's <a href="https://github.com/apple/axlearn">AXLearn</a>, optimizing model architecture and testing.</p>
+                </div>
+                
+                <div class="work-item">
+                    <div class="work-title">NVIDIA TEGRA Team</div>
+                    <p>Worked at <a href="https://www.nvidia.com/en-in/self-driving-cars/data-center/">NVIDIA</a> in the TEGRA Team preprocessing data to train DriveNet for autonomous vehicle driving. Developed high-performance AI applications and hardware acceleration solutions.</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <h2>Technical Expertise</h2>
+                
+                <p>Specializing in machine learning and deep learning with expertise in transformer architectures, RNNs, CNNs, and language models. Proficient in NLP, Edge AI, and model optimization.</p>
+                
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">AxLearn</span>
+                </div>
+                
+                <div class="work-item">
+                    <div class="work-title">SLYRIC Project</div>
+                    <p>Created <a href="https://github.com/vishesh9131/SLYRIC">SLYRIC</a> (Sign Language Yielding Realtime Intelligent Classifier) as an independent project for real-time sign language classification, optimized for edge devices.</p>
+                </div>
+                
+                <div class="work-item">
+                    <div class="work-title">BHASA LLM</div>
+                    <p>Currently developing BHASA LLM using MAMBA architecture. Research focuses on evolving state space models, Bayesian approaches, and efficient AI architectures with sustainable applications.</p>
+                </div>
+                
+                <div class="skill-label">Machine Learning • Deep Learning • NLP • Transformers</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="asymmetric-footer">© 2023 Vishesh Yadav</div>
+        </div>
+    </div>
+    
+    <div class="contact">
+        <a href="https://github.com/vishesh9131" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 0.5C5.4 0.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.6-1 .6-1-.9-.6-2.1-.9-2.1-3.5 0-.8.3-1.5.8-2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.2-.3 1.8-.3.6 0 1.2.1 1.8.3 1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2 0 2.6-1.2 2.9-2.1 3.5.6.5.7 1.5.7 2.4v3.6c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4 0-6.6-5.4-12-12-12z"></path>
+            </svg>
+        </a>
+    </div>
+    
+    <script>
+        // Simple theme toggle
+        const themeSwitch = document.querySelector('.theme-switch');
+        themeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Check for saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+        }
+    </script>
 </body>
 </html>
