@@ -1356,15 +1356,34 @@
             }
         }
         
+        // Initialize theme from localStorage or time
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme) {
+                // Use saved theme preference
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark');
+                } else {
+                    document.body.classList.remove('dark');
+                }
+            } else {
+                // No saved preference, use time-based theme
+                setThemeByTime();
+            }
+        }
+        
         // Manual theme toggle
         const themeSwitch = document.querySelector('.theme-switch');
-        themeSwitch.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        });
+        if (themeSwitch) {
+            themeSwitch.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            });
+        }
         
-        // Initialize theme
-        setThemeByTime();
+        // Initialize theme on page load
+        initializeTheme();
         
         // Auto-detect overflow and enable scrolling for mobile
         function checkOverflow() {
@@ -1402,13 +1421,7 @@
             setTimeout(checkOverflow, 100);
         });
         
-        // Check overflow when tab content changes
-        const tabButtons = document.querySelectorAll('.tab-button');
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                setTimeout(checkOverflow, 200);
-            });
-        });
+        // Check overflow when tab content changes (will be handled in tab switching)
         
         // Force enable scrolling on mobile devices
         function isMobileDevice() {
@@ -1451,6 +1464,9 @@
                 if (targetContent) {
                     targetContent.classList.add('active');
                 }
+                
+                // Check overflow after tab change
+                setTimeout(checkOverflow, 200);
             });
         });
         
@@ -1473,6 +1489,9 @@
                 if (targetContent) {
                     targetContent.classList.add('active');
                 }
+                
+                // Check overflow after subtab change
+                setTimeout(checkOverflow, 200);
             });
         });
     </script>
