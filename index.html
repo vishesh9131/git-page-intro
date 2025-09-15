@@ -591,6 +591,38 @@
             color: var(--text);
         }
         
+        .achievement-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .collaborators {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 0.3rem;
+        }
+        
+        .collaborator-label {
+            font-size: 0.8rem;
+            color: var(--hint);
+            font-weight: 500;
+        }
+        
+        .collaborator-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .collaborator-link:hover {
+            color: var(--text);
+        }
+        
         /* Elegant contact button */
         .contact {
             position: fixed;
@@ -800,6 +832,19 @@
                 font-size: 0.8rem;
             }
             
+            .achievement-links {
+                gap: 0.5rem;
+            }
+            
+            .collaborators {
+                gap: 0.3rem;
+            }
+            
+            .collaborator-label,
+            .collaborator-link {
+                font-size: 0.7rem;
+            }
+            
             .subtab-button {
                 font-size: 0.7rem;
                 padding: 0.2rem 0.4rem;
@@ -895,7 +940,7 @@
             </div>
             <p><a href="https://iisc.ac.in/" target="_blank">Indian Institute of Science </a> | M.C.A Hons AI | Bangalore, India</p>
             <p>Email: <a href="mailto:sciencely98@gmail.com">sciencely98@gmail.com</a>, <a href="mailto:vishesh@nvidia.com">vishesh@nvidia.com</a>, <a href="mailto:vishesh@corerec.tech">vishesh@corerec.tech</a></p>
-            <p><a href="https://drive.google.com/file/d/1TyAimABwDsBt8sPPtd_8DvfoRG1t_Arm/view?usp=share_link" target="_blank">View CV</a></p>
+            <p><a href="https://www.linkedin.com/in/vishesh-yadav-aa7333192/" target="_blank">LinkedIn</a> | <a href="https://drive.google.com/file/d/1TyAimABwDsBt8sPPtd_8DvfoRG1t_Arm/view?usp=share_link" target="_blank">View CV</a></p>
             <button class="theme-switch" aria-label="Toggle dark mode">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -954,7 +999,15 @@
                         <div class="achievement-content">
                             <h3>Contributor to Apple's AxLearn</h3>
                             <p>Improved model accuracy and stability in Apple's internal AxLearn framework by contributing to quantize testing modules and fixing core SSM evaluation flows.</p>
-                            <a href="https://github.com/apple/axlearn" target="_blank" class="achievement-link">View on GitHub</a>
+                            <div class="achievement-links">
+                                <a href="https://github.com/apple/axlearn/pull/737" target="_blank" class="achievement-link">Thread</a>
+                                <a href="https://github.com/apple/axlearn" target="_blank" class="achievement-link">GitHub</a>
+                            </div>
+                            <div class="collaborators">
+                                <a href="https://www.linkedin.com/in/jiarui-lu/" target="_blank" class="collaborator-link">Jiarui Lu</a>
+                                <a href="https://github.com/ruomingp" target="_blank" class="collaborator-link">Ruoming Pang</a>
+                                <a href="https://github.com/markblee" target="_blank" class="collaborator-link">Mark Lee</a>
+                            </div>
                         </div>
                     </div>
                     
