@@ -497,6 +497,100 @@
         }
         
         
+        /* Achievements section */
+        .achievements-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: var(--spacing);
+        }
+        
+        .achievements-container h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing);
+            text-align: center;
+            color: var(--text);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing);
+            margin-top: var(--spacing);
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--micro-spacing);
+            padding: var(--micro-spacing);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .achievement-image {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .achievement-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .placeholder-image {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        .achievement-content {
+            flex: 1;
+        }
+        
+        .achievement-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--text);
+        }
+        
+        .achievement-content p {
+            font-size: 0.9rem;
+            color: var(--subtle);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .achievement-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .achievement-link:hover {
+            color: var(--text);
+        }
+        
         /* Elegant contact button */
         .contact {
             position: fixed;
@@ -680,6 +774,32 @@
                 margin-bottom: 0.2rem;
             }
             
+            .achievements-container {
+                padding: var(--micro-spacing);
+            }
+            
+            .achievements-container h2 {
+                font-size: 1.4rem;
+                margin-bottom: var(--micro-spacing);
+            }
+            
+            .achievement-grid {
+                grid-template-columns: 1fr;
+                gap: var(--micro-spacing);
+            }
+            
+            .achievement-item {
+                padding: 0.3rem;
+            }
+            
+            .achievement-content h3 {
+                font-size: 1rem;
+            }
+            
+            .achievement-content p {
+                font-size: 0.8rem;
+            }
+            
             .subtab-button {
                 font-size: 0.7rem;
                 padding: 0.2rem 0.4rem;
@@ -793,6 +913,7 @@
         
         <div class="tab-nav">
             <button class="tab-button active" data-tab="overview">Overview</button>
+            <button class="tab-button" data-tab="achievements">Achievements</button>
             <button class="tab-button" data-tab="projects">Projects & Research</button>
         </div>
         
@@ -818,6 +939,101 @@
                     </div>
                     
                     <div class="skill-label">Machine Learning • Deep Learning • NLP • Transformers</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="achievements">
+            <div class="achievements-container">
+                
+                <div class="achievement-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/apple.png" alt="Apple AxLearn" class="achievement-logo">
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Contributor to Apple's AxLearn</h3>
+                            <p>Improved model accuracy and stability in Apple's internal AxLearn framework by contributing to quantize testing modules and fixing core SSM evaluation flows.</p>
+                            <a href="https://github.com/apple/axlearn" target="_blank" class="achievement-link">View on GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/cr.png" alt="CoreRec" class="achievement-logo">
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Creator of CoreRec</h3>
+                            <p>Achieved 30,000+ downloads for a custom-built recommendation engine framework with support for deep learning and graph-based models.</p>
+                            <a href="https://corerec.tech" target="_blank" class="achievement-link">Visit CoreRec</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/nvidia.png" alt="NVIDIA" class="achievement-logo">
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Part of  TEGRA Team at NVIDIA</h3>
+                            <p>Contributed to projects at the intersection of machine learning and Autonomous Vehicles Driving in the TEGRA team.</p>
+                            <a href="https://www.nvidia.com/en-in/self-driving-cars/data-center/" target="_blank" class="achievement-link">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/oioi.png" alt="BHASA LLM" class="achievement-logo">
+
+                            <!-- <div class="placeholder-image">oioi</div> -->
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Creator of oioi</h3>
+                            <p>Ranked among Top 30 macOS utilities for developing "oioi" – a lightweight clipboard overlay used by hundreds of daily users.</p>
+                            <a href="https://oioi.top" target="_blank" class="achievement-link">Visit oioi</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/bhasha.png" alt="BHASA LLM" class="achievement-logo">
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Developer of BHASA LLM</h3>
+                            <p>Designing a State Space Model–based architecture (MAMBA) for training scalable language models.</p>
+                            <a href="https://bhasha.tech/research/" target="_blank" class="achievement-link">View Research</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <img src="assets/iisc.png" alt="IISc" class="achievement-logo">
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Research at IISc</h3>
+                            <p>Working in Prof. Sashikumar Ganesan's AIREX Lab at the intersection of finite element methods, language modeling, and computational fluid dynamics.</p>
+                            <a href="https://cds.iisc.ac.in/" target="_blank" class="achievement-link">View Department</a>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <div class="placeholder-image">AI</div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Deep Neural Networks Expert</h3>
+                            <p>Built and trained Deep Neural Networks on large-scale datasets with focus on recommendation systems, graph models, and sequence modeling.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-image">
+                            <div class="placeholder-image">OS</div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Open Source Contributor</h3>
+                            <p>Active in Open Source and Research, working on projects spanning FPGA-based AI acceleration, medical NLP systems, and multilingual AI.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
